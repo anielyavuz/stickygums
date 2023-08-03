@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f50cb2be521078b409a68b3a26a2218e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wallPrefab: {fileID: 3893896324964234059, guid: 583e916cb33d49b49b93e639e03d0d8a, type: 3}
+  - MainCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
