@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SeviyelerYonetici : MonoBehaviour
 {
     // Start is called before the first frame update
-   public static bool seviye1,seviye2,seviye3;
-public Button seviye1_button,seviye2_button,seviye3_button;
+   public static bool seviye1,seviye2,seviye3,seviye4;
+public Button seviye1_button,seviye2_button,seviye3_button,seviye4_button;
     private void Start() {
     seviye1=true;
    }
@@ -19,6 +19,10 @@ public Button seviye1_button,seviye2_button,seviye3_button;
      if(seviye3==true)
     {
         seviye3_button.interactable=true;
+    }
+     if(seviye4==true)
+    {
+        seviye4_button.interactable=true;
     }
    }
 }

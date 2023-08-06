@@ -10,29 +10,36 @@ public class Pivot : MonoBehaviour
     Vector3 mousePos;
     Vector2 distance;
     bool okCizildiMi = false;
-    // Start is called before the first frame update
-  private void Awake()
+    public static bool okCizgisiCikabilirmi = true; //top fırlatıldıktan sonra okun tekrar çıkmaması için
+                                      // Start is called before the first frame update
+    private void Awake()
     {
         lr = GetComponent<LineRenderer>();
     }
 
-     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-        if (okCizildiMi)
-        {
-            if (!Touchscreen.current.primaryTouch.press.isPressed)
+      
+
+
+            if (okCizildiMi)
             {
-                lr.enabled = false;
+                if (!Touchscreen.current.primaryTouch.press.isPressed)
+                {
+                    lr.enabled = false;
+                }
             }
-        }
-        if (Touchscreen.current.primaryTouch.press.isPressed)
+              if (okCizgisiCikabilirmi)
         {
-            OkCiz();
+            if (Touchscreen.current.primaryTouch.press.isPressed)
+            {
+                OkCiz();
+            }
         }
     }
 
-     private void OkCiz()
+    private void OkCiz()
     {
         CalculateThrowVector();
         SetArrow();

@@ -10,7 +10,7 @@ public class ballBounce : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody2D rb;
     public bool _cisimEkranDisinda = false;
-    
+   
 
     Vector3 lastVelocity;
     private void Awake()
@@ -36,7 +36,7 @@ public class ballBounce : MonoBehaviour
     {
         
         lastVelocity = rb.velocity;
-      
+       
 
         Invoke(nameof(ballDroped), 2);
 
@@ -53,6 +53,7 @@ public class ballBounce : MonoBehaviour
 
                 Debug.Log("cisim kayboldu");
                 ballHandler.SpawnNewBall();
+                Pivot.okCizgisiCikabilirmi=true;
                 _cisimEkranDisinda = true;
                 
                 Destroy(gameObject);
