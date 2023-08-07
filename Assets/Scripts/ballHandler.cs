@@ -102,6 +102,7 @@ public class ballHandler : MonoBehaviour
                 currentBallRigidbody = ballInstance.GetComponent<Rigidbody2D>();
                 currentBallSpringJoint = ballInstance.GetComponent<SpringJoint2D>();
                 currentBallSpringJoint.connectedBody = pivot;
+                ballCount = ballCount - 1;
                 
                 
             }
