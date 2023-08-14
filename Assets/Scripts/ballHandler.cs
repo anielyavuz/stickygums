@@ -10,6 +10,7 @@ public class ballHandler : MonoBehaviour
 
 
     public Button continue_button;
+    public Button replay_button;
     [SerializeField] private Rigidbody2D pivot;
     [SerializeField] private float respawnDelay;
     [SerializeField] private float detachDelay;
@@ -73,6 +74,7 @@ public class ballHandler : MonoBehaviour
 
     public void SpawnNewBall()
     {
+        DisableEnableReplayButton(false);
         if (GameData.gameLife > 0)
         {
 
@@ -118,11 +120,13 @@ public class ballHandler : MonoBehaviour
     {
         mainScreenText.text = "Level Completed";
         continue_button.gameObject.SetActive(true);
+        DisableEnableReplayButton(false);
     }
 
     public void GameOver()
     {
         mainScreenText.text = "Game Over";
+        DisableEnableReplayButton(false);
     }
 
     private void LaunchBall()
@@ -134,6 +138,7 @@ public class ballHandler : MonoBehaviour
         Pivot.okCizgisiCikabilirmi = false;
 
         Invoke(nameof(DetachBall), detachDelay);
+        DisableEnableReplayButton(true);
 
         //araya delay eklenmeli ki top fırlasın ve sistem serbest kalsın yoksa top direkt düşüyor.
 
@@ -145,6 +150,18 @@ public class ballHandler : MonoBehaviour
         currentBallSpringJoint.enabled = false; // fırlattıktan sonra topu tutan merkezden serbest bırakmak için kullanıldı.
         currentBallSpringJoint = null;// fırlattıktan sonra topu tutan merkezden serbest bırakmak için kullanıldı.
 
+    }
+
+    public void DisableEnableReplayButton(bool check)
+    {
+        if(check)
+        {
+            replay_button.gameObject.SetActive(true);
+        }
+        else
+        {
+            replay_button.gameObject.SetActive(false);
+        }
     }
 
 
