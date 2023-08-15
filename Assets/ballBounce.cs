@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ballBounce : MonoBehaviour
 {
-    ballHandler ballHandler;
+    public static ballHandler ballHandler;
     
 
     // Start is called before the first frame update
     private Rigidbody2D rb;
-    public bool _cisimEkranDisinda = false;
+    public static bool _cisimEkranDisinda = false;
    
 
     Vector3 lastVelocity;
@@ -40,6 +40,17 @@ public class ballBounce : MonoBehaviour
 
         Invoke(nameof(ballDroped), 2);
 
+    }
+
+    public static void replayButtonFunction()
+    {
+
+        Debug.Log("cisim kayboldu");
+        ballHandler.SpawnNewBall();
+        Pivot.okCizgisiCikabilirmi = true;
+        _cisimEkranDisinda = true;
+
+        //Destroy(gameObject);
     }
 
 
