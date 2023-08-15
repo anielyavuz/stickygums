@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class SeviyeBitirme : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public void replayButtonClicked(){
+        ballBounce.replayButtonFunction();
+    }
+
     public void levelEkranınaGit()
     {
 
