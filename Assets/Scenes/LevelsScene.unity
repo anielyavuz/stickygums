@@ -1662,8 +1662,8 @@ MonoBehaviour:
   seviye2_button: {fileID: 446082015}
   seviye3_button: {fileID: 1351849443}
   seviye4_button: {fileID: 373287098}
-  seviye5_button: {fileID: 0}
-  seviye6_button: {fileID: 0}
+  seviye5_button: {fileID: 1190524861}
+  seviye6_button: {fileID: 1890309748}
 --- !u!4 &1895856204
 Transform:
   m_ObjectHideFlags: 0
