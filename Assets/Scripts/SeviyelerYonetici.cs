@@ -23,6 +23,7 @@ public Button seviye1_button,seviye2_button,seviye3_button,seviye4_button, seviy
      if(seviye4==true)
     {
         seviye4_button.interactable=true;
+        //
     }
 
         if (seviye5 == true)
