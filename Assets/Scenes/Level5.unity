@@ -1201,9 +1201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1701113878}
-        m_TargetAssemblyTypeName: SeviyeBitirme, Assembly-CSharp
-        m_MethodName: replayButtonClicked
+      - m_Target: {fileID: 173924724}
+        m_TargetAssemblyTypeName: ballHandler, Assembly-CSharp
+        m_MethodName: replayButtonFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

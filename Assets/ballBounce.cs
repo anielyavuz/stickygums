@@ -42,16 +42,16 @@ public class ballBounce : MonoBehaviour
 
     }
 
-    public static void replayButtonFunction()
-    {
+    // public static void replayButtonFunction()
+    // {
 
-        Debug.Log(_cisimEkranDisinda);
-        ballHandler.SpawnNewBall();
-        Pivot.okCizgisiCikabilirmi = true;
-        _cisimEkranDisinda = true;
+    //     Debug.Log(_cisimEkranDisinda);
+    //     ballHandler.SpawnNewBall();
+    //     Pivot.okCizgisiCikabilirmi = true;
+    //     _cisimEkranDisinda = true;
 
-        //Destroy(gameObject);
-    }
+    //     //Destroy(gameObject);
+    // }
 
 
     private void ballDroped()

@@ -8,7 +8,7 @@ public class ballHandler : MonoBehaviour
 {
     [SerializeField] private GameObject ballPrefab;
     public static ballBounce ballBounce;
-
+    public GameObject ballObject;
     public Button continue_button;
     public Button replay_button;
     [SerializeField] private Rigidbody2D pivot;
@@ -165,6 +165,20 @@ public class ballHandler : MonoBehaviour
             replay_button.gameObject.SetActive(false);
         }
     }
+
+     public void replayButtonFunction()
+    {
+
+        // Debug.Log(_cisimEkranDisinda);
+         SpawnNewBall();
+        Pivot.okCizgisiCikabilirmi = true;
+        ballBounce._cisimEkranDisinda = true;
+
+        ballObject = GameObject.FindGameObjectWithTag("ballTag");
+        Destroy(ballObject);
+        //Destroy(gameObject);
+    }
+
 
 
 
