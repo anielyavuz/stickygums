@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 8878113066223018786, guid: 065b1e58a7b0a7641bb58acda37c8e7f, type: 3}
+  ballObject: {fileID: 0}
   continue_button: {fileID: 521871065}
   replay_button: {fileID: 1359171398}
   pivot: {fileID: 2115633051}
@@ -535,7 +536,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1701113878}
         m_TargetAssemblyTypeName: SeviyeBitirme, Assembly-CSharp
-        m_MethodName: seviye4bitir
+        m_MethodName: seviye5bitir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
