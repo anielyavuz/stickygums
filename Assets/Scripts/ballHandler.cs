@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ballHandler : MonoBehaviour
 {
     [SerializeField] private GameObject ballPrefab;
-
+    public static ballBounce ballBounce;
 
     public Button continue_button;
     public Button replay_button;
@@ -86,6 +86,7 @@ public class ballHandler : MonoBehaviour
                 currentBallSpringJoint = ballInstance.GetComponent<SpringJoint2D>();
                 currentBallSpringJoint.connectedBody = pivot;
                 ballCount = ballCount - 1;
+                
 
                 ////////
                 
@@ -108,6 +109,7 @@ public class ballHandler : MonoBehaviour
                 
                 
             }
+            
         }
         else{
              mainScreenText.text = "GameOver";
@@ -149,7 +151,7 @@ public class ballHandler : MonoBehaviour
     {
         currentBallSpringJoint.enabled = false; // fırlattıktan sonra topu tutan merkezden serbest bırakmak için kullanıldı.
         currentBallSpringJoint = null;// fırlattıktan sonra topu tutan merkezden serbest bırakmak için kullanıldı.
-
+        ballBounce._cisimEkranDisinda=false;
     }
 
     public void DisableEnableReplayButton(bool check)

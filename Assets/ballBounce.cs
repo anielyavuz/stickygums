@@ -45,7 +45,7 @@ public class ballBounce : MonoBehaviour
     public static void replayButtonFunction()
     {
 
-        Debug.Log("cisim kayboldu");
+        Debug.Log(_cisimEkranDisinda);
         ballHandler.SpawnNewBall();
         Pivot.okCizgisiCikabilirmi = true;
         _cisimEkranDisinda = true;
