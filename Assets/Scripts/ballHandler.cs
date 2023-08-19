@@ -44,29 +44,58 @@ public class ballHandler : MonoBehaviour
 
         // Debug.Log("testDegisken222222 "+ballBounce.testDegisken);
 
-        
-        HealthText.text = GameData.gameLife.ToString()+" x❤️";
+
+        HealthText.text = GameData.gameLife.ToString() + " x❤️";
 
         if (currentBallRigidbody == null)
         {
             return;
         }
-        if (!Touchscreen.current.primaryTouch.press.isPressed)
-        {
-            if (isDragging)
-            {
-                LaunchBall();
-            }
-            isDragging = false;
 
-            return;
+        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+        if (80f < touchPosition.x &&
+        touchPosition.x < 140f ||
+        180 < touchPosition.x &&
+        touchPosition.x < 240f &&
+        30f < touchPosition.y &&
+        touchPosition.y < 80f ||
+        120f < touchPosition.y &&
+        touchPosition.y < 170f)
+        {
+            if (!Touchscreen.current.primaryTouch.press.isPressed)
+            {
+                if (isDragging)
+                {
+                    LaunchBall();
+                }
+                isDragging = false;
+
+                return;
+            }
+
+            isDragging = true;
+            currentBallRigidbody.isKinematic = true;
+            // Debug.Log("içerde");
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+            currentBallRigidbody.position = worldPosition;
         }
 
-        isDragging = true;
-        currentBallRigidbody.isKinematic = true;
-        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
-        currentBallRigidbody.position = worldPosition;
+        if (140f < touchPosition.x && touchPosition.x < 180f && 80f < touchPosition.y && touchPosition.y < 120f)
+        {
+            if (!Touchscreen.current.primaryTouch.press.isPressed)
+            {
+                if (isDragging)
+                {
+                    currentBallRigidbody.position = pivot.position;
+                }
+                isDragging = false;
+
+                return;
+            }
+            Debug.Log("Fırlatma İptal");
+        }
+
+        // Debug.Log("dışarda");
 
 
     }
@@ -86,10 +115,10 @@ public class ballHandler : MonoBehaviour
                 currentBallSpringJoint = ballInstance.GetComponent<SpringJoint2D>();
                 currentBallSpringJoint.connectedBody = pivot;
                 ballCount = ballCount - 1;
-                
+
 
                 ////////
-                
+
 
 
 
@@ -106,13 +135,14 @@ public class ballHandler : MonoBehaviour
                 currentBallSpringJoint = ballInstance.GetComponent<SpringJoint2D>();
                 currentBallSpringJoint.connectedBody = pivot;
                 ballCount = ballCount - 1;
-                
-                
+
+
             }
-            
+
         }
-        else{
-             mainScreenText.text = "GameOver";
+        else
+        {
+            mainScreenText.text = "GameOver";
         }
 
 
@@ -151,12 +181,12 @@ public class ballHandler : MonoBehaviour
     {
         currentBallSpringJoint.enabled = false; // fırlattıktan sonra topu tutan merkezden serbest bırakmak için kullanıldı.
         currentBallSpringJoint = null;// fırlattıktan sonra topu tutan merkezden serbest bırakmak için kullanıldı.
-        ballBounce._cisimEkranDisinda=false;
+        ballBounce._cisimEkranDisinda = false;
     }
 
     public void DisableEnableReplayButton(bool check)
     {
-        if(check)
+        if (check)
         {
             replay_button.gameObject.SetActive(true);
         }
@@ -166,11 +196,11 @@ public class ballHandler : MonoBehaviour
         }
     }
 
-     public void replayButtonFunction()
+    public void replayButtonFunction()
     {
 
         // Debug.Log(_cisimEkranDisinda);
-         SpawnNewBall();
+        SpawnNewBall();
         Pivot.okCizgisiCikabilirmi = true;
         ballBounce._cisimEkranDisinda = true;
 
