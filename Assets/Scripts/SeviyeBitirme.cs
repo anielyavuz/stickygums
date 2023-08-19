@@ -30,7 +30,7 @@ public class SeviyeBitirme : MonoBehaviour
     public void seviyeBasla() 
     
     {
-        game
+        
     }
 
     public void seviye1basla()
