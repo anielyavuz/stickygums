@@ -146,10 +146,15 @@ public class ballHandler : MonoBehaviour
             isDragging = true;
             currentBallRigidbody.isKinematic = true;
             Debug.Log("touchPosition.x  =  " +touchPosition.x.ToString());
-            Debug.Log("R  =  "+r.ToString());
-            touchPosition.x=touchPosition.x*1.5f/r;
-            touchPosition.y=touchPosition.y*1.5f/r;
+            Debug.Log("currentBallRigidbody.x =  "+currentBallRigidbody.position.x.ToString());
+            
+          
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+
+            worldPosition.x=worldPosition.x*0.5f/r;
+
+            worldPosition.y=worldPosition.y*0.5f/r;
+            Debug.Log("worldPosition.x  =  "+worldPosition.x.ToString());
             currentBallRigidbody.position = worldPosition;
 
         }
