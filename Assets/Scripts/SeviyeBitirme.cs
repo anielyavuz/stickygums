@@ -11,6 +11,15 @@ public class SeviyeBitirme : MonoBehaviour
     //     ballHandler.replayButtonFunction();
     // }
 
+    public void mevcutLevelBitir()
+    {
+        var sceneID = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(sceneID);
+        Pivot.okCizgisiCikabilirmi=true;
+        SeviyelerYonetici.yeniLevelInfo=true;
+        SeviyelerYonetici.yeniLevelID=sceneID-1; //Mevcut scene ID'in 1 üstü olması için +1 eklendi, SeviyelerYonetici altındaki array'in ilgili elemanına denk gelmesi için 2 çıkarıldı ve sonuç -1 oldu. 
+        SceneManager.LoadScene(1);
+    }
     public void levelEkranınaGit()
     {
 
