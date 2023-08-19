@@ -48,7 +48,7 @@ public class Pivot : MonoBehaviour
 
     void CalculateThrowVector()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(0f, -4f, 0f);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(0f, -3.38f, 0f);
         Vector2 distance = mousePos - new Vector3(0f, 0f, 0f);
         throwVector = -distance.normalized * 100;
     }
