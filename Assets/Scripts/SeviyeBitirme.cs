@@ -27,6 +27,12 @@ public class SeviyeBitirme : MonoBehaviour
 
     }
 
+    public void seviyeBasla() 
+    
+    {
+        game
+    }
+
     public void seviye1basla()
     {
 
@@ -62,47 +68,12 @@ public class SeviyeBitirme : MonoBehaviour
         SceneManager.LoadScene(7);
 
     }
-    public void seviye1bitir()
-    {
-        SeviyelerYonetici.seviye2 = true;
-        Pivot.okCizgisiCikabilirmi=true;
-        SceneManager.LoadScene(1);
+    // public void seviye1bitir()
+    // {
+    //     SeviyelerYonetici.seviye2 = true;
+    //     Pivot.okCizgisiCikabilirmi=true;
+    //     SceneManager.LoadScene(1);
 
-    }
-    public void seviye2bitir()
-    {
-        SeviyelerYonetici.seviye3 = true;
-        Pivot.okCizgisiCikabilirmi=true;
-        SceneManager.LoadScene(1);
-
-    }
-
-      public void seviye3bitir()
-    {
-        SeviyelerYonetici.seviye4 = true;
-        Pivot.okCizgisiCikabilirmi=true;
-        SceneManager.LoadScene(1);
-
-    }
-    public void seviye4bitir()
-    {
-        SeviyelerYonetici.seviye5 = true;
-        Pivot.okCizgisiCikabilirmi=true;
-        SceneManager.LoadScene(1);
-
-    }
-    public void seviye5bitir()
-    {
-        SeviyelerYonetici.seviye6 = true;
-        Pivot.okCizgisiCikabilirmi = true;
-        SceneManager.LoadScene(1);
-
-    }
-    public void seviye6bitir()
-    {
-        SeviyelerYonetici.seviye6 = true;
-        Pivot.okCizgisiCikabilirmi = true;
-        SceneManager.LoadScene(1);
-
-    }
+    // }
+   
 }
