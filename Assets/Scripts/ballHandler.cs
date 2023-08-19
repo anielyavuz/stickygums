@@ -22,6 +22,8 @@ public class ballHandler : MonoBehaviour
     private SpringJoint2D currentBallSpringJoint;
     private Camera mainCamera;
     public bool isDragging;
+    public bool touchPositionKayitStatus=true;
+    public Vector2  touchPositionKayit;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,15 +55,33 @@ public class ballHandler : MonoBehaviour
         }
 
         Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-        if (80f < touchPosition.x &&
-        touchPosition.x < 140f ||
-        180 < touchPosition.x &&
-        touchPosition.x < 240f &&
-        30f < touchPosition.y &&
-        touchPosition.y < 80f ||
-        120f < touchPosition.y &&
-        touchPosition.y < 170f)
+        //         Debug.Log("X poziyonu "+touchPosition.x.ToString());
+        // Debug.Log("Y poziyonu "+touchPosition.y.ToString());
+        // Debug.Log(pivot.ReadValue().x);
+
+        var r = Mathf.Sqrt(Mathf.Pow(currentBallRigidbody.position.x, 2) + Mathf.Pow(currentBallRigidbody.position.y + 3.38f, 2));
+        Debug.Log(r);
+
+
+        if (
+            0.5f < r && r < 1.5f
+
+        //     80f < touchPosition.x &&
+        // touchPosition.x < 140f ||
+        // 180 < touchPosition.x &&
+        // touchPosition.x < 240f &&
+        // 30f < touchPosition.y &&
+        // touchPosition.y < 80f ||
+        // 120f < touchPosition.y &&
+        // touchPosition.y < 170f
+
+
+        )
         {
+            touchPositionKayitStatus=true;
+            // Debug.Log("A");
+
+
             if (!Touchscreen.current.primaryTouch.press.isPressed)
             {
                 if (isDragging)
@@ -80,8 +100,14 @@ public class ballHandler : MonoBehaviour
             currentBallRigidbody.position = worldPosition;
         }
 
-        if (140f < touchPosition.x && touchPosition.x < 180f && 80f < touchPosition.y && touchPosition.y < 120f)
+        else if (
+
+             r < 0.5f
+
+             )
         {
+            touchPositionKayitStatus=true;
+            // Debug.Log("B");
             if (!Touchscreen.current.primaryTouch.press.isPressed)
             {
                 if (isDragging)
@@ -92,7 +118,40 @@ public class ballHandler : MonoBehaviour
 
                 return;
             }
+            isDragging = true;
+            currentBallRigidbody.isKinematic = true;
+            // Debug.Log("içerde");
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+            currentBallRigidbody.position = worldPosition;
+
             Debug.Log("Fırlatma İptal");
+        }
+        else
+        {
+            //   Debug.Log("C");
+            
+                
+
+            if (!Touchscreen.current.primaryTouch.press.isPressed)
+            {
+                if (isDragging)
+                {
+                    LaunchBall();
+                }
+                isDragging = false;
+
+                return;
+            }
+
+            isDragging = true;
+            currentBallRigidbody.isKinematic = true;
+            Debug.Log("touchPosition.x  =  " +touchPosition.x.ToString());
+            Debug.Log("R  =  "+r.ToString());
+            touchPosition.x=touchPosition.x*1.5f/r;
+            touchPosition.y=touchPosition.y*1.5f/r;
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+            currentBallRigidbody.position = worldPosition;
+
         }
 
         // Debug.Log("dışarda");
