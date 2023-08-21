@@ -15,6 +15,7 @@ public class Pivot : MonoBehaviour
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        
     }
 
     // Update is called once per frame
