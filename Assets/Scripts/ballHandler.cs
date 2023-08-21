@@ -27,6 +27,7 @@ public class ballHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate=60;
         mainCamera = Camera.main;
         SpawnNewBall();
         // Debug.Log("testDegisken "+ballBounce.testDegisken);
@@ -61,6 +62,7 @@ public class ballHandler : MonoBehaviour
 
         var r = Mathf.Sqrt(Mathf.Pow(currentBallRigidbody.position.x, 2) + Mathf.Pow(currentBallRigidbody.position.y + 3.38f, 2));
         Debug.Log(r);
+
 
 
         if (
@@ -124,7 +126,7 @@ public class ballHandler : MonoBehaviour
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
             currentBallRigidbody.position = worldPosition;
 
-            Debug.Log("Fırlatma İptal");
+            // Debug.Log("Fırlatma İptal");
         }
         else
         {
@@ -145,16 +147,15 @@ public class ballHandler : MonoBehaviour
 
             isDragging = true;
             currentBallRigidbody.isKinematic = true;
-            Debug.Log("touchPosition.x  =  " +touchPosition.x.ToString());
-            Debug.Log("currentBallRigidbody.x =  "+currentBallRigidbody.position.x.ToString());
+            Debug.Log("r : "+r);
+            Debug.Log("touchPosition.x  =  " +touchPosition.x.ToString()+" - touchPosition.y  =  " +touchPosition.y.ToString());
+            Debug.Log("currentBallRigidbody.x =  "+currentBallRigidbody.position.x.ToString()+"- currentBallRigidbody.y =  "+currentBallRigidbody.position.y.ToString());
             
           
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-            worldPosition.x=worldPosition.x*0.5f/r;
-
-            worldPosition.y=worldPosition.y*0.5f/r;
-            Debug.Log("worldPosition.x  =  "+worldPosition.x.ToString());
+           
+            Debug.Log("worldPosition.x  =  "+worldPosition.x.ToString()+" - worldPosition.y  =  "+worldPosition.y.ToString());
             currentBallRigidbody.position = worldPosition;
 
         }
