@@ -22,12 +22,13 @@ public class ballHandler : MonoBehaviour
     private SpringJoint2D currentBallSpringJoint;
     private Camera mainCamera;
     public bool isDragging;
-    public bool touchPositionKayitStatus=true;
-    public Vector2  touchPositionKayit;
+    public bool ilkDokunus=true;
+    public bool touchPositionKayitStatus = true;
+    public Vector2 touchPositionKayit;
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate=60;
+        Application.targetFrameRate = 60;
         mainCamera = Camera.main;
         SpawnNewBall();
         // Debug.Log("testDegisken "+ballBounce.testDegisken);
@@ -40,28 +41,14 @@ public class ballHandler : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        // Debug.Log("testDegisken222222 "+ballBounce.testDegisken);
-
-
-        HealthText.text = GameData.gameLife.ToString() + " x❤️";
-
-        if (currentBallRigidbody == null)
-        {
-            return;
-        }
-
-        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+void TopuKontrolEt(Vector2 touchPosition){
+    
         //         Debug.Log("X poziyonu "+touchPosition.x.ToString());
         // Debug.Log("Y poziyonu "+touchPosition.y.ToString());
         // Debug.Log(pivot.ReadValue().x);
 
         var r = Mathf.Sqrt(Mathf.Pow(currentBallRigidbody.position.x, 2) + Mathf.Pow(currentBallRigidbody.position.y + 3.38f, 2));
-        Debug.Log(r);
+        // Debug.Log(r);
 
 
 
@@ -80,7 +67,7 @@ public class ballHandler : MonoBehaviour
 
         )
         {
-            touchPositionKayitStatus=true;
+            touchPositionKayitStatus = true;
             // Debug.Log("A");
 
 
@@ -108,7 +95,7 @@ public class ballHandler : MonoBehaviour
 
              )
         {
-            touchPositionKayitStatus=true;
+            touchPositionKayitStatus = true;
             // Debug.Log("B");
             if (!Touchscreen.current.primaryTouch.press.isPressed)
             {
@@ -131,8 +118,8 @@ public class ballHandler : MonoBehaviour
         else
         {
             //   Debug.Log("C");
-            
-                
+
+
 
             if (!Touchscreen.current.primaryTouch.press.isPressed)
             {
@@ -147,20 +134,62 @@ public class ballHandler : MonoBehaviour
 
             isDragging = true;
             currentBallRigidbody.isKinematic = true;
-            Debug.Log("r : "+r);
-            Debug.Log("touchPosition.x  =  " +touchPosition.x.ToString()+" - touchPosition.y  =  " +touchPosition.y.ToString());
-            Debug.Log("currentBallRigidbody.x =  "+currentBallRigidbody.position.x.ToString()+"- currentBallRigidbody.y =  "+currentBallRigidbody.position.y.ToString());
-            
-          
+            // Debug.Log("r : "+r);
+            // Debug.Log("touchPosition.x  =  " +touchPosition.x.ToString()+" - touchPosition.y  =  " +touchPosition.y.ToString());
+            // Debug.Log("currentBallRigidbody.x =  "+currentBallRigidbody.position.x.ToString()+"- currentBallRigidbody.y =  "+currentBallRigidbody.position.y.ToString());
+
+
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-           
-            Debug.Log("worldPosition.x  =  "+worldPosition.x.ToString()+" - worldPosition.y  =  "+worldPosition.y.ToString());
+
+            // Debug.Log("worldPosition.x  =  "+worldPosition.x.ToString()+" - worldPosition.y  =  "+worldPosition.y.ToString());
             currentBallRigidbody.position = worldPosition;
 
         }
 
         // Debug.Log("dışarda");
+
+}
+    // Update is called once per frame
+    void Update()
+    {
+
+        // Debug.Log("testDegisken222222 "+ballBounce.testDegisken);
+
+
+        HealthText.text = GameData.gameLife.ToString() + " x❤️";
+
+        if (currentBallRigidbody == null)
+        {
+            return;
+        }
+
+        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+        Vector3 dunyaPoziyon = mainCamera.ScreenToWorldPoint(touchPosition);
+        
+        Vector3 pivotYeni= new Vector3(pivot.position.x,pivot.position.y,transform.position.z);
+        // Debug.Log("dunyaPoziyon  "+dunyaPoziyon.ToString()+"  -  pivotYeni  "+pivotYeni.ToString());
+        if(ilkDokunus){
+            if (pivotYeni.x-0.5f < dunyaPoziyon.x && dunyaPoziyon.x < pivotYeni.x+0.5f &&  pivotYeni.y-0.5f < dunyaPoziyon.y && dunyaPoziyon.y < pivotYeni.y+0.5f  )
+        {
+            Debug.Log("Topa dokundu");
+            Pivot.okCizgisiCikabilirmi = true;
+            ilkDokunus=false;
+
+            TopuKontrolEt(touchPosition);
+        }
+        else{
+            Pivot.okCizgisiCikabilirmi = false;
+        }
+        }
+        else
+        {
+            Pivot.okCizgisiCikabilirmi = true;
+            TopuKontrolEt(touchPosition);
+
+        }
+        
+
 
 
     }
@@ -171,6 +200,7 @@ public class ballHandler : MonoBehaviour
         DisableEnableReplayButton(false);
         if (GameData.gameLife > 0)
         {
+            ilkDokunus=true;
 
             if (ballCount > 0)
             {
