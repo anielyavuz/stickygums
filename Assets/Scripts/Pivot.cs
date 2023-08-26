@@ -16,6 +16,7 @@ public class Pivot : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         
+        
     }
 
     // Update is called once per frame
