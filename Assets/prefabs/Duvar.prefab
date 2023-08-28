@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1579294107325877052}
   m_Layer: 0
   m_Name: Duvar
-  m_TagString: Untagged
+  m_TagString: DuvarTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -96,6 +96,15 @@ public class ballBounce : MonoBehaviour
             var direction = Vector3.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
 
             rb.velocity = direction * Mathf.Max(speed, 0f);
+            if (coll.gameObject.tag == "DuvarTag")
+            {
+                Debug.Log("Duvara çarptı +2 puan");
+            }
+            else if(coll.gameObject.tag == "Tackle1")
+            {
+                Debug.Log("Engele çarptı +3 puan");
+
+            }
         }
 
 
