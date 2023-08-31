@@ -195,6 +195,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.7167318
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.06426692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967149180208148368, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: Tackle
+      value: 
+      objectReference: {fileID: 1219245038}
     - target: {fileID: 3699385521229045330, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -305,6 +337,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+--- !u!1 &1219245038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3699385521229045340, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+  m_PrefabInstance: {fileID: 1219245037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2096224505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,6 +349,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.7167318
+      objectReference: {fileID: 0}
+    - target: {fileID: -8369516461153416411, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.06426692
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967149180208148368, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+      propertyPath: Tackle
+      value: 
+      objectReference: {fileID: 2096224506}
     - target: {fileID: 3699385521229045330, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -422,3 +491,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+--- !u!1 &2096224506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3699385521229045340, guid: cbc56e660dd4f384bb8a3ba948a05c54, type: 3}
+  m_PrefabInstance: {fileID: 2096224505}
+  m_PrefabAsset: {fileID: 0}

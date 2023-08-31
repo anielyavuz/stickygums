@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3699385521229045330}
   - component: {fileID: 3699385521229045341}
   - component: {fileID: -8369516461153416411}
+  - component: {fileID: 1967149180208148368}
   m_Layer: 0
   m_Name: Tackle1
   m_TagString: Tackle1
@@ -130,3 +131,16 @@ PolygonCollider2D:
       - {x: 0.421875, y: -0.421875}
       - {x: 0.46875, y: -0.359375}
       - {x: 0.4921875, y: -0.28515625}
+--- !u!114 &1967149180208148368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699385521229045340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb34d6dcba5ce45448d76f148836e17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tackle: {fileID: 0}
