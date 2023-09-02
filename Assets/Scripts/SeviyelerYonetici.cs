@@ -7,7 +7,7 @@ public class SeviyelerYonetici : MonoBehaviour
 {
     // Start is called before the first frame update
     public Button[] levelButtons;
-    public int amountOfLevelButtons = 7;
+    public int amountOfLevelButtons = 8;
     public static bool yeniLevelInfo=false;
     public static int yeniLevelID=1;
     private void Awake()

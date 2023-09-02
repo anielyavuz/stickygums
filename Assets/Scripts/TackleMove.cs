@@ -6,6 +6,8 @@ public class TackleMove : MonoBehaviour
 {
     private bool movingLeft;
 
+    [SerializeField] private float _speed = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +19,12 @@ public class TackleMove : MonoBehaviour
     {
         if (movingLeft == true)
         {
-            transform.Translate(Vector2.left * 1 * Time.deltaTime);
+            transform.Translate(Vector2.left * _speed * Time.deltaTime);
             if (transform.position.x <= -2) movingLeft = false;
         }
         else
         {
-            transform.Translate(Vector2.right * 1 * Time.deltaTime);
+            transform.Translate(Vector2.right * _speed * Time.deltaTime);
             if (transform.position.x >= 2) movingLeft = true;
         }
     }
