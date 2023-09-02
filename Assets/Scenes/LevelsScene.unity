@@ -931,7 +931,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 994270852}
         m_TargetAssemblyTypeName: SeviyeBitirme, Assembly-CSharp
-        m_MethodName: seviye8basla
+        m_MethodName: seviye9basla
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
