@@ -80,6 +80,12 @@ public class SeviyeBitirme : MonoBehaviour
         SceneManager.LoadScene(9);
 
     }
+    public void seviye9basla()
+    {
+
+        SceneManager.LoadScene(10);
+
+    }
     // public void seviye1bitir()
     // {
     //     SeviyelerYonetici.seviye2 = true;
